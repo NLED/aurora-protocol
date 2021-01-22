@@ -1,5 +1,9 @@
 1/22/2021: Work in progress, if it is not done soon, bug me to finish it at jnygaard@NLEDshop.com
 
+I swear this will be updated soon with a functional example program for NodeJS command line, along with branches for ElectronJS and Cordova.
+
+LED controllers and devices that can be interfaced are available at www.NLEDshop.com
+Custom devices for products and OEMs are available. Please Contact Us.
 
 THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. 
 EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES 
@@ -19,4 +23,3 @@ Written in vanilla Javascript. May require NodeJS or other runtime enviroment.
 
 Javascript and NodeJS library for interfacing to NLED devices through the Aurora protocol. Works over USB, serial port, TCP IP, and certain Bluetooth modules. Work in progress, if it is not done soon, bug me to finish it at jnygaard@NLEDshop.com
 
-I swear this will be updated soon with an example program, and branches for NodeJS, ElectronJS, and Cordova.
