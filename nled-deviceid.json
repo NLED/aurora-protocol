@@ -1,0 +1,17 @@
+{
+"30": "NLED 30 Channel High Current LED Controller",
+"43": "NLED Four Channel Mini",
+"44": "NLED 4 Channel DMX Wash Controller",
+"65": "Pixel Controller Nano",
+"104": "NLED 16-Bit RGBW Lamp Controller",
+"105": "NLED 16-Bit RGBW Manual Controller",
+"108": "NLED OctoSequencer Controller",
+"122": "Pixel Controller Duo",
+"131": "Pixel Controller Photon",
+"133": "Pixel Controller Proton",
+"135": "Pixel Controller Quark",
+"144": "Quad Constant Current",
+"148": "Pixel Controller Ion",
+"160": "Pixel Controller Electron",
+"170": "Pixel Controller Axion"
+}

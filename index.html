@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>NLED Aurora Control Protocol Example Interface - v3.0.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="app">
+    <div id="header" class="appSection">
+      <h2>NLED Aurora Control Protocol Example Interface v3.0.0</h2>
+      <div><a href="https://www.nledshop.com/aurora">www.NLEDshop.com/aurora</a></div>
+      <div><a href="https://www.nledshop.com/downloads/documents/nled-aurora-command-manual-v311.pdf">NLED Aurora Command Manual</a></div>
+      <div>Created by Jeff Nygaard of NLED. Copyright 2024. MIT License.</div>
+    </div>
+
+    <div id="connection" class="appSection">
+      <div style="width:50%;height:4em;">
+        <label for="app-connection-method">Interface Method: </label>
+        <select id="app-connection-method">
+          <option value="webserial">Web Serial Port</option>
+          <option value="nodejs">NodeJS Serial Port</option>
+          <option value="tcpip">TCP IP</option>
+        </select>
+
+        <div id="app-connection-nodejs" class="hide">
+          <div id="app-connection-nodejs-server"><span class="bold">NodeJS Server Status:</span> <span id="app-connection-nodejs-status">Not Connected</span></div>
+          <select id="app-connection-nodejs-baud">
+            <!-- DYNAMIC -->
+          </select>
+          <button id="app-connection-nodejs-scan">Scan Ports</button>
+          <select id="app-connection-nodejs-ports">
+            <!-- DYNAMIC -->
+          </select>
+        </div>
+
+        <div id="app-connection-webserial" class="">
+          <div id="app-connection-webserial-server"><span class="bold">Web Serial Status:</span> <span id="app-connection-webserial-status">Unknown</span></div>
+
+          <select id="app-connection-webserial-baud">
+            <!-- DYNAMIC -->
+          </select>
+          <span>Click 'Connect' to select port.</span>
+        </div>
+
+        <div id="app-connection-tcpip" class="hide">
+          <div id="app-connection-tcpip-adr">
+            <input id="app-connection-tcpip-ipadr1" class="ipInputBox" type="number" value="192" max="255" min="0"> .
+            <input id="app-connection-tcpip-ipadr2" class="ipInputBox" type="number" value="168" max="255" min="0"> .
+            <input id="app-connection-tcpip-ipadr3" class="ipInputBox" type="number" value="4" max="255" min="0"> .
+            <input id="app-connection-tcpip-ipadr4" class="ipInputBox" type="number" value="1" max="255" min="0"> :
+            <input id="app-connection-tcpip-ipport" class="ipInputBox" type="number" value="23" max="255" min="0">
+          </div>
+        </div>
+      </div>
+
+      <div style="width:40%;">
+        <div><span class="bold">Connection Status: </span><span id="app-connection-status">Not Connected</span></div>
+        <div><span class="bold">Device: </span><span id="app-connection-device">None</span></div>
+        <div><span class="bold">Firmware Ver: </span><span id="app-connection-fwv">?</span></div>
+        <button id="app-connection-connect">Connect</button>
+        <button id="app-connection-disconnect">Disconnect</button>
+      </div>
+    </div>
+
+    <div id="app-console" class="appSection">
+      <div id="app-console-cont">
+        <div id="app-console-header"><span>Console:</span><button>Clear</button></div>
+        <textarea id="app-console-box"></textarea>
+      </div>
+    </div>
+
+    <div id="app-command-elements">
+      <div id="app-playcontrols">
+        <div style="display:flex;align-items: center;;"><label for="app-playcontrols-intensity">Intensity:</label><input id="app-playcontrols-intensity" type="range"></div>
+        <button id="app-playcontrols-onoff">On/off</button>
+        <button id="app-playcontrols-playpause">Play/Pause</button>
+        <button id="app-playcontrols-play">Play</button>
+        <button id="app-playcontrols-pause">Pause</button>
+        <button id="app-playcontrols-next">Next Seq.</button>
+        <button id="app-playcontrols-previous">Previous Seq.</button>
+        <button id="app-playcontrols-speedup">Speed +</button>
+        <button id="app-playcontrols-speeddown">Speed -</button>
+        <div><button id="app-playcontrols-setspeed">Set Speed Value</button><input id="app-commandlist-setspeed-val" type="number" min="1" max="65535" value="1"></div>
+      </div>
+
+      <div id="app-commandlist">
+        <div><button id="app-commandlist-setseqid">Set Sequence By ID</button><input id="app-commandlist-setseqid-val" type="number" min="0" max="255" value="0"></div>
+        <div><button id="app-commandlist-setuserid">Set User ID Number</button><input id="app-commandlist-setuserid-val" type="number" min="0" max="255" value="0"></div>
+        <button id="app-commandlist-setseqidle">Set Sequence to Idle</button>
+        <button id="app-commandlist-blank">Blank Outputs</button>
+        <button id="app-commandlist-deviceinfo">Request Device Information</button>
+        <button id="app-commandlist-serialnumber">Request Serial Number</button>
+        <button id="app-commandlist-defaultconfig">Set Config to Default</button>
+      </div>
+
+      <div id="app-commandpixels">
+        <div>Pixel Controller Specific Commands:</div>
+        <div>
+          <button id="app-commandlist-setpixelcolororder">Set Pixel Color Order</button>
+          <select id="app-commandlist-setpixelcolororder-val">
+            <option value="0">RGB(W)</option>
+            <option value="1">BRG</option>
+            <option value="2">GBR</option>
+            <option value="3">RBG</option>
+            <option value="4">BGR</option>
+            <option value="5">GRB</option>
+            <option value="6">GRBW</option>
+          </select>
+        </div>
+        <div><button id="app-commandlist-setpixelclone">Set Pixel Packet Clone</button><input id="app-commandlist-setpixelclone-val" type="number" min="0" max="16" value="0"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="./index.js"></script>
+  <script type="text/javascript" src="./aurora-protocol.js"></script>
+  <script type="text/javascript" src="./webserial.js"></script>
+</body>
+</html>

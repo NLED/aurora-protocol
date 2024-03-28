@@ -1,0 +1,24 @@
+{
+  "name": "nled-aurora-protocol",
+  "version": "3.0.0",
+  "description": "A Javascript library for interfacing with NLED smart devices from web and webview based applications. Please report bugs and contact by email with any suggestions or comments.",
+  "main": "aurora-protocol.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [
+    "nled",
+    "aurora",
+    "protocol",
+    "commands",
+    "led",
+    "controller"
+  ],
+  "author": "Jeff Nygaard",
+  "license": "MIT",
+  "dependencies": {
+    "serialport": "^9.0.6",
+    "ws": "^8.16.0"
+  }
+}
